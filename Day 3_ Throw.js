@@ -21,7 +21,6 @@ process.stdin.on('end', _ => {
 function readLine() {
     return inputString[currentLine++];
 }
-
 /*
  * Complete the isPositive function.
  * If 'a' is positive, return "YES".
@@ -29,20 +28,14 @@ function readLine() {
  * If 'a' is negative, throw an Error with the message "Negative Error"
  */
 function isPositive(a) {
-    if (a > 0)
-        {
-            return "YES";
-        }
-    else if (a === 0)
-        {
-            throw new Error("Zero Error");
-        }
-    else if (a < 0)
-        {
-            throw new Error("Negative Error");
-        }
-}
+    try{if(a>0)return 'YES';
+    else if(a<0)throw "Negative Error";
+    else if(a==0) throw "Zero Error"
+    }catch(m){
+        return(m);
+    }
 
+}
 
 function main() {
     const n = +(readLine());

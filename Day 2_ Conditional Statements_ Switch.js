@@ -21,28 +21,17 @@ process.stdin.on('end', _ => {
 function readLine() {
     return inputString[currentLine++];
 }
-
-/*
- * Complete the reverseString function
- * Use console.log() to print to stdout.
- */
-function reverseString(s) {
-    try {
-        var splitString = s.split("");
-        var reverseArray = splitString.reverse();
-        var joinArray = reverseArray.join("");
-        console.log(joinArray);
-    }
-    catch (error)
-    {
-        console.log(error.message);
-        console.log(s);
-    }
+function getLetter(s) {
+    
+let a="aeiou";
+    if(a.search(s[0])!=-1)return 'A';
+     if("bcdfg".search(s[0])!=-1)return 'B';
+     if("hjklm".search(s[0])!=-1)return 'C';
+     if("npqrstvwxyz".search(s[0])!=-1)return 'D';
 }
 
-
 function main() {
-    const s = eval(readLine());
+    const s = readLine();
     
-    reverseString(s);
+    console.log(getLetter(s));
 }

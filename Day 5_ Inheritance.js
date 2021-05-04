@@ -4,11 +4,7 @@ class Rectangle {
         this.h = h;
     }
 }
-
-/*
- *  Write code that adds an 'area' method to the Rectangle class' prototype
- */
-    Rectangle.prototype.area = function() {
+Rectangle.prototype.area = function() {
         return(this.w*this.h);
     };
 /*
@@ -21,9 +17,7 @@ class Rectangle {
             this.h = s;
             this.w = s;
         }
-    };
-
-
+};
 if (JSON.stringify(Object.getOwnPropertyNames(Square.prototype)) === JSON.stringify([ 'constructor' ])) {
     const rec = new Rectangle(3, 4);
     const sqr = new Square(3);
